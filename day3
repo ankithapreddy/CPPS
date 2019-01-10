@@ -10,37 +10,15 @@ How to define a pointer?
 specifies that variable 
 countPtr
  is of type 
-int
-*
- (i.e., a pointer to an integer) and is read
-(right to left), “
-countPtr
- is a pointer to 
-int
-” or “
-countPtr
- points to an object of type 
-int
-.”
-Also, the variable 
-count
- is defined to be an 
-int
-, 
-not
- a pointer to an 
-int
-. The 
-*
- applies 
-only
-to 
-countPtr
- in the definition. When 
-*
- is used in this manner in a definition, it indicates
+int* (i.e., a pointer to an integer) and is read (right to left), “countPtr is a pointer to  int ” or “countPtr
+ points to an object of type  int .” Also, the variable countis defined to be an int, not a pointer to an int. The *applies 
+only to countPtr in the definition. When * is used in this manner in a definition, it indicates
 that the variable being defined is a pointer. Pointers can be defined to point to objects of
 any type. To prevent the ambiguity of declaring pointer and non-pointer variables in the
 same declaration as shown above, you should always declare
- only one variable per declara-
-tion.  
+ only one variable per declaration. 
+what is "*"?
+ The unary* operator, commonly referred to as the indirection operator or dereferencing operator, returns the value
+ of the object to which its operand (i.e., a pointer) points. For example, the statementprints the value of variable y,   
+ namely 5. Using * in this manner is called dereferencing a pointer.
+ 
