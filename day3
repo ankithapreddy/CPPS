@@ -1,0 +1,46 @@
+How to use call by reference in c?
+ The very first clue i got is to use pointers.
+Why cant we use call by reference in c?
+What is a pointer in c ?
+ Pointers are variables whose values are memory address.From this defination i get a brief idea that pointer provides the addess 
+ to access the value of the variable.
+How to define a pointer?
+ int *countPtr, count;
+ here int is the return type *countPtr is the pointer which points to the value of the variable count.
+specifies that variable 
+countPtr
+ is of type 
+int
+*
+ (i.e., a pointer to an integer) and is read
+(right to left), “
+countPtr
+ is a pointer to 
+int
+” or “
+countPtr
+ points to an object of type 
+int
+.”
+Also, the variable 
+count
+ is defined to be an 
+int
+, 
+not
+ a pointer to an 
+int
+. The 
+*
+ applies 
+only
+to 
+countPtr
+ in the definition. When 
+*
+ is used in this manner in a definition, it indicates
+that the variable being defined is a pointer. Pointers can be defined to point to objects of
+any type. To prevent the ambiguity of declaring pointer and non-pointer variables in the
+same declaration as shown above, you should always declare
+ only one variable per declara-
+tion.  
