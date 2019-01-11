@@ -73,6 +73,22 @@ what is segmentation error and core dumping?
 Core Dump/Segmentation fault is a specific kind of error caused by accessing memory that “does not belong to you.”
  When a piece of code tries to do read and write operation in a read only location in memory or freed block of memory,
  it is known as core dump.It is an error indicating memory corruption.
+ now i cleared the whole program!
+ I reffered the book and got to know the syntax and the way we pass an address of the variable using pointers.
+ In function ‘main’:
+pointers.c:20:4: error: called object ‘sum’ is not a function or function pointer
+  z=sum(x,y);
+    ^~~
+pointers.c:9:6: note: declared here
+  int sum;
+      ^~~
+pointers.c: In function ‘compute’:
+pointers.c:22:1: error: expected declaration or statement at end of input
+ }
+ I renamed the compute function as add and wrote the actual compute part in the main.
+then i found that my program is just taking the values and not returning output.
+Then i got to know i havent called the output function in the main.
+After clearing all these errors my program ran successfully.
 
 
 
