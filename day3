@@ -22,3 +22,36 @@ what is "*"?
  of the object to which its operand (i.e., a pointer) points. For example, the statementprints the value of variable y,   
  namely 5. Using * in this manner is called dereferencing a pointer.
  
+what is a constant qualifier?
+  The  const qualifier enables you to inform the compiler that the value of a particular vari-
+  able should not be modified. 
+write an input function.
+ #include<stdio.h>
+int input()
+{
+ 	int *x,*y,a,b;
+	printf("Enter two numbers");
+	scanf("%d%d",&a,&c);
+	*x=a;
+	*y=b;
+	return q;
+}
+void main()
+{
+	q=input();
+}
+	I got the following errors...
+ 
+pointers.c:6:19: error: ‘c’ undeclared (first use in this function)
+  scanf("%d%d",&a,&c);
+                   ^
+pointers.c:6:19: note: each undeclared identifier is reported only once for each function it appears in
+pointers.c:9:9: error: ‘q’ undeclared (first use in this function)
+  return q;
+         ^
+pointers.c: In function ‘main’:
+pointers.c:13:2: error: ‘q’ undeclared (first use in this function)
+  q=input();
+
+
+ 
