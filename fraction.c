@@ -1,18 +1,24 @@
 #include<stdio.h>
-struct fractions{
-	int x;
-	int y;
-};
-struct fractions input()
+struct fraction
 {
-	int q;
-	int num1,num2,den1,den2;
-	printf("Enter the values of the fractions:\n");
-	scanf("%d%d%d%d",&q.num1,&q.num2,&q.den1,&q.den2);
+	int numerator;
+	int denominator;
+};
+struct fraction get_fraction(struct fraction *f)
+{
+	printf("Enter the value of numerator:");
+	scanf("%d",&f->numerator);
+	printf("Enter the value of denominaor:");
+	scanf("%d",&f->denominator);
+}
+void show_fraction(struct fraction f)
+{
+	printf("%d/%d\n",f.numerator,f.denominator);
 }
 int main()
 {
-	struct fractions q;
-	int z;
-	z=input();
-}
+	struct fraction f;
+	get_fraction(&f);
+	show_fraction(f);
+	return 0;
+}	
