@@ -1,43 +1,34 @@
 #include<stdio.h>
-struct fraction
-{
+struct fractions{
 	int numerator;
 	int denominator;
 };
-struct fraction get_fraction(struct fraction *f,struct fraction *g)
+struct fractions input(struct fractions *k,struct fractions *l)
 {
-	printf("Enter the value of numerator:");
-	scanf("%d",&f->numerator);
-	printf("Enter the value of denominator:");
-	scanf("%d",&f->denominator);
-	printf("Enter the value of numerator:");
-	scanf("%d",&g->numerator);
-	printf("Enter the value of denominator:");
-	scanf("%d",&g->denominator);
+	printf("Enter the values of numerator \n");
+	scanf("%d",&k->numerator);
+	printf("Enter the value of denomiantor:\n");
+	scanf("%d",&k->denominator);
+	printf("Enter the value of numerator\n");
+	scanf("%d",&l->numerator);
+	printf("Enter the value of denominator\n");
+	scanf("%d",&l->denominator);
 }
-/*void show_fraction(struct fraction f,struct fraction g)
+int compute(struct fractions *k,struct fractions *l)
 {
-	printf("The first farction is:%d/%d\n",f.numerator,f.denominator);
-	printf("The second fraction is:%d/%d\n",g.numerator,g.denominator);
-}*/
-struct fraction add1(struct fraction f,struct fraction g)
-{
-	int sumn;
-	int sumd;
-	sumn=(f.numerator*g.denominator)+(g.numerator*f.denominator);
-	sumd=(f.denominator*g.denominator);
+	int sum1,sum2;
+	sum1=((k->numerator*l->denominator)+(l->numerator*k->denominator));
+	sum2=(k->denominator+l->denominator);
 }
-void output(int n,int d)
+void output(int sum1,int sum2)
 {
-	printf("The sum is %d/%d",n,d);
-} 
-	
+	printf("%d/%d\n",&sum1,&sum2);
+}
 int main()
 {
-	struct fraction f,g;
-	int n,d;
-	get_fraction(&f,&g);
-	show_fraction(f,g);
-	struct fraction add1(n,d);
-	output(n,d);
-}	
+	struct fractions k,l;
+	input(&k,&l);
+	compute(&k,&l);
+	int sum1,sum2;
+	output(sum1,sum2);
+}
