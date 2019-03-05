@@ -1,36 +1,33 @@
+
 #include<stdio.h>
-struct fractions{
+struct fraction{
 	int numerator;
 	int denominator;
 };
-struct fractions input(struct fractions *k,struct fractions *l)
+void input1(struct fraction *k)
 {
 	printf("Enter the values of numerator \n");
 	scanf("%d",&k->numerator);
-	printf("Enter the value of denomiantor:\n");
+	printf("Enter the value of denomiantor\n");
 	scanf("%d",&k->denominator);
+}
+void input2(struct fraction *l)
+{
 	printf("Enter the value of numerator\n");
 	scanf("%d",&l->numerator);
 	printf("Enter the value of denominator\n");
 	scanf("%d",&l->denominator);
 }
-int compute(struct fractions *k,struct fractions *l)
+void show_fractions(struct fraction *k,struct fraction *l)
 {
-	int sum1=0,sum2=0;
-	sum1=((k->numerator*l->denominator)+(l->numerator*k->denominator));
-	sum2=(k->denominator+l->denominator);
+	printf("The first fraction is %d/%d\n",k->numerator,k->denominator);
+	printf("The second fraction is %d/%d\n",l->numerator,l->denominator);
 }
-void output(int *sum1,int *sum2)
-{
-	printf("%d/%d",sum1,sum2);
-}
-
 int main()
 {
-	struct fractions k,l,z;
-	int x;
-	z=input(&k,&l);
-	x=compute(&k,&l);
-	int a,b;
-	output(&a,&b);
+	struct fraction k,l;
+	input1(&k);
+	input2(&l);
+	show_fractions(&k,&l);
+	return 0;
 }
