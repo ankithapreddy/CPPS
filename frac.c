@@ -4,14 +4,14 @@ struct fraction{
 	int numerator;
 	int denominator;
 };
-struct fraction input1(struct fraction *k)
+void input1(struct fraction *k)
 {
 	printf("Enter the value of numerator\n");
 	scanf("%d",&k->numerator);
 	printf("Enter the value of denominator\n");
 	scanf("%d",&k->denominator);
 }
-struct fraction input2(struct fraction *l)
+void input2(struct fraction *l)
 {
 	printf("Enter the value of numerator\n");
 	scanf("%d",&l->numerator);
