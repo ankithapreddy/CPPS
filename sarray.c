@@ -26,7 +26,7 @@ struct fractions compute(int n,struct fractions a[],struct fractions *result)
 	int i,den=1,num=0; 
 	for(i=0;i<n;i++)
 	{
-		result->numerator+=(a[i].numerator*a[i+1].numerator);        	
+		result->numerator+=(a[i].numerator*a[i+1].denominator);        	
 		result->denominator=a[i].denominator;
 	}
 }
