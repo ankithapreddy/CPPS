@@ -13,34 +13,35 @@ void input1(int *n)
 void input2(int *n,struct fractions a[])
 {
 	int i;
-	for(i=0;i<*n;i++)
+	for(i=1;i<=*n;i++)
 	{
-		printf("Enter the numerators\n");
+		printf("Enter the numerator of fraction %d : \n",i);
 		scanf("%d",&a[i].numerator);
-		printf("Enter the denominator\n");
+		printf("Enter the denominator of fraction  %d : \n",i);
 		scanf("%d",&a[i].denominator);
 	}
 }
-struct fractions compute(int *n,struct fractions a[])
+struct fractions compute(int n,struct fractions a[],struct fractions *result)
 {
-	int i;
-	for(i=0;i<*n-1;i++)
+	int i,den=1,num=0; 
+	for(i=0;i<n;i++)
 	{
-        	a[i].numerator=(a[i].numerator*a[i].denominator+a[i].numerator*a[i].denominator);
-		a[i].denominator=a[i].denominator*a[i].denominator;
+		result->numerator+=(a[i].numerator*a[i+1].numerator);        	
+		result->denominator=a[i].denominator;
 	}
 }
-void output(int *n,struct fractions a[])
+void output(struct fractions result)
 {
-	printf("The sum of two fractions is:%d/%d\n",a[n].numerator,a[n].denominator);
+	printf("The sum of two fractions is:%d/%d\n",result.numerator,result.denominator);
 }
 int main()
 {
-	int n,r;
+	int n;
 	input1(&n);
 	struct fractions a[n];
+	struct fractions result;
 	input2(&n,&a[n]);
-	compute(n,&a[n]);
-	output(&n,&a[n]);
+	compute(n,&a[n],&result);
+	output(result);
 	return 0;
 }
