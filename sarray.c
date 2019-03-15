@@ -1,5 +1,6 @@
 #include<stdio.h>
 struct fractions
+
 {
 	int numerator;
 	int denominator;
@@ -10,24 +11,32 @@ void input1(int *n)
 	scanf("%d",n);
 	
 }
-void input2(int *n,struct fractions a[])
+void input2(int n,struct fractions a[])
 {
 	int i;
-	for(i=1;i<=*n;i++)
+	for(i=1;i<=n;i++)
 	{
 		printf("Enter the numerator of fraction %d : \n",i);
-		scanf("%d",&a[i].numerator);
+		scanf("%d",&a[i-1].numerator);
 		printf("Enter the denominator of fraction  %d : \n",i);
-		scanf("%d",&a[i].denominator);
+		scanf("%d",&a[i-1].denominator);
 	}
 }
 struct fractions compute(int n,struct fractions a[],struct fractions *result)
 {
-	int i,den=1,num=0; 
-	for(i=0;i<n;i++)
-	{
-		result->numerator+=(a[i].numerator*a[i+1].denominator);        	
-		result->denominator=a[i].denominator;
+	int i,num=1,temp=1;
+	result->numerator=0; 
+	result->denominator=1;	
+	for(i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			if(j!=i){
+				temp*=a[j].denominator;
+			}
+		}
+		num=a[i].numerator*temp;
+		result->numerator+=num;
+		result->denominator*=a[i].denominator;
+		temp=1;
 	}
 }
 void output(struct fractions result)
@@ -40,8 +49,8 @@ int main()
 	input1(&n);
 	struct fractions a[n];
 	struct fractions result;
-	input2(&n,&a[n]);
-	compute(n,&a[n],&result);
+	input2(n,a);
+	compute(n,a,&result);
 	output(result);
 	return 0;
 }
