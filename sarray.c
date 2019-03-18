@@ -22,7 +22,7 @@ void input2(int n,struct fractions a[])
 		scanf("%d",&a[i-1].denominator);
 	}
 }
-struct fractions compute(int n,struct fractions a[])
+struct fractions compute(int n,struct fractions a[n])
 {
 	struct fractions k;
 	int i,num=1,temp=1;
