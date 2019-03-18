@@ -22,11 +22,11 @@ void input2(int n,struct fractions a[])
 		scanf("%d",&a[i-1].denominator);
 	}
 }
-struct fractions compute(int n,struct fractions a[],struct fractions *result)
+struct fractions compute(int n,struct fractions a[],struct fractions result)
 {
 	int i,num=1,temp=1;
-	result->numerator=0; 
-	result->denominator=1;	
+	result.numerator=0; 
+	result.denominator=1;	
 	for(i=0;i<n;i++)
 	{
 		for(int j=0;j<n;j++)
@@ -37,10 +37,11 @@ struct fractions compute(int n,struct fractions a[],struct fractions *result)
 			}
 		}
 	num=a[i].numerator*temp;
-	result->numerator+=num;
-	result->denominator*=a[i].denominator;
+	result.numerator+=num;
+	result.denominator*=a[i].denominator;
 	temp=1;
 	}
+	return result;
 }
 void output(struct fractions result)
 {
