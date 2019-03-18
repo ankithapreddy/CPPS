@@ -27,16 +27,19 @@ struct fractions compute(int n,struct fractions a[],struct fractions *result)
 	int i,num=1,temp=1;
 	result->numerator=0; 
 	result->denominator=1;	
-	for(i=0;i<n;i++){
-		for(int j=0;j<n;j++){
-			if(j!=i){
+	for(i=0;i<n;i++)
+	{
+		for(int j=0;j<n;j++)
+		{
+			if(j!=i)
+			{
 				temp*=a[j].denominator;
 			}
 		}
-		num=a[i].numerator*temp;
-		result->numerator+=num;
-		result->denominator*=a[i].denominator;
-		temp=1;
+	num=a[i].numerator*temp;
+	result->numerator+=num;
+	result->denominator*=a[i].denominator;
+	temp=1;
 	}
 }
 void output(struct fractions result)
