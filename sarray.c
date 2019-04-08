@@ -1,7 +1,5 @@
 #include<stdio.h>
-struct fractions
-
-{
+struct fractions{
 	int numerator;
 	int denominator;
 };
@@ -16,22 +14,30 @@ void input2(int n,struct fractions a[])
 	int i;
 	for(i=0;i<n;i++)
 	{
-		printf("Enter the numerator of fraction %d : \n",i);
-		scanf("%d",&a[i+1].numerator);
-		printf("Enter the denominator of fraction  %d : \n",i);
-		scanf("%d",&a[i+1].denominator);
+		printf("Enter the numerator of fraction %d : \n",i+1);
+		scanf("%d",&a[i].numerator);
+		printf("Enter the denominator of fraction  %d : \n",i+1);
+		scanf("%d",&a[i].denominator);
 	}
 }
-struct fractions compute(int n,struct fractions a[n])
+struct fractions compute(int n,struct fractions a[])
 {
 	struct fractions result;
-	int i,denominator;
+	int i,denom=1;
 	result.numerator=0; 
 	result.denominator=1;	
 	for(i=0;i<n;i++)
 	{
-		result.denominator*=a[i+1].denominator;
-		result.numerator+=(result.denominator)/(a[i+1].denominator);
+		result.denominator*=a[i].denominator;
+	}
+	for(int j=0;j<n;j++){
+		for(int k=0;k<n;k++){
+			if(j!=k){
+				denom*=a[k].denominator;		
+			}		
+		}
+		result.numerator+=a[j].numerator*denom;
+		denom=1;
 	}
 	return result;
 }
