@@ -29,14 +29,12 @@ struct fractions compute(int n,struct fractions a[])
 	for(i=0;i<n;i++)
 	{
 		result.denominator*=a[i].denominator;
-	}
-	for(int j=0;j<n;j++){
-		for(int k=0;k<n;k++){
-			if(j!=k){
-				denom*=a[k].denominator;		
+		for(int j=0;j<n;j++){
+			if(i!=j){
+				denom*=a[j].denominator;		
 			}		
 		}
-		result.numerator+=a[j].numerator*denom;
+		result.numerator+=a[i].numerator*denom;
 		denom=1;
 	}
 	return result;
@@ -56,3 +54,5 @@ int main()
 	output(result);
 	return 0;
 }
+
+    
